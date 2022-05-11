@@ -1,4 +1,4 @@
-export default async function postScore(e) {
+const postScore = async (e) => {
   e.preventDefault();
   const user = document.getElementById('name').value;
   const score = document.getElementById('score').value;
@@ -17,3 +17,5 @@ export default async function postScore(e) {
   yourScore.value = '';
   return data;
 }
+
+export default postScore;

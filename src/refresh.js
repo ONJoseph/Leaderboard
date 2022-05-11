@@ -1,6 +1,6 @@
 import Result from './result.js';
 
-export default async function refresh() {
+const refresh = async () => {
   const list = document.querySelector('.results');
   list.style.border = '2px solid black';
   list.innerHTML = '';
@@ -12,3 +12,5 @@ export default async function refresh() {
     list.innerHTML += savedRecord;
   });
 }
+
+export default refresh;
