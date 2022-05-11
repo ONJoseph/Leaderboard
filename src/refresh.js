@@ -11,6 +11,6 @@ const refresh = async () => {
     const savedRecord = Result.record(element.user, element.score);
     list.innerHTML += savedRecord;
   });
-}
+};
 
 export default refresh;

@@ -16,6 +16,6 @@ const postScore = async (e) => {
   yourName.value = '';
   yourScore.value = '';
   return data;
-}
+};
 
 export default postScore;
