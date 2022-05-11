@@ -116,7 +116,37 @@ eval("\n\n/* istanbul ignore next  */\nfunction styleTagTransform(css, styleElem
   \**********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _styles_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./styles.css */ \"./src/styles.css\");\n\n\n//# sourceURL=webpack://leaderboard/./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _styles_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./styles.css */ \"./src/styles.css\");\n/* harmony import */ var _post_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./post.js */ \"./src/post.js\");\n/* harmony import */ var _refresh_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./refresh.js */ \"./src/refresh.js\");\n\n\n\n\ndocument.getElementById('data-submit').addEventListener('submit', _post_js__WEBPACK_IMPORTED_MODULE_1__[\"default\"]);\ndocument.querySelector('.btn-refresh').addEventListener('click', _refresh_js__WEBPACK_IMPORTED_MODULE_2__[\"default\"]);\n\n//# sourceURL=webpack://leaderboard/./src/index.js?");
+
+/***/ }),
+
+/***/ "./src/post.js":
+/*!*********************!*\
+  !*** ./src/post.js ***!
+  \*********************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ postScore)\n/* harmony export */ });\nasync function postScore(e) {\n  e.preventDefault();\n  const user = document.getElementById('name').value;\n  const score = document.getElementById('score').value;\n  const gameUrl = 'https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/jT5ddO4HfUyAH1uOfTZ3/scores/';\n  const result = await fetch(`${gameUrl}`, {\n    method: 'POST',\n    headers: {\n      'Content-Type': 'application/json',\n    },\n    body: JSON.stringify({ user, score }),\n  });\n  const data = await result.json();\n  const yourName = document.querySelector('.your-name');\n  const yourScore = document.querySelector('.your-score');\n  yourName.value = '';\n  yourScore.value = '';\n  return data;\n}\n\n//# sourceURL=webpack://leaderboard/./src/post.js?");
+
+/***/ }),
+
+/***/ "./src/refresh.js":
+/*!************************!*\
+  !*** ./src/refresh.js ***!
+  \************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ refresh)\n/* harmony export */ });\n/* harmony import */ var _result_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./result.js */ \"./src/result.js\");\n\n\nasync function refresh() {\n  const list = document.querySelector('.results');\n  list.styles.border = '2px solid black';\n  list.innerHTML = '';\n  const results = await fetch('https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/jT5ddO4HfUyAH1uOfTZ3/scores/');\n  const data = await results.json();\n  const arr = data.result;\n  arr.forEach((element) => {\n    const savedRecord = _result_js__WEBPACK_IMPORTED_MODULE_0__[\"default\"].record(element.user, element.score);\n    list.innerHTML += savedRecord;\n  });\n}\n\n\n//# sourceURL=webpack://leaderboard/./src/refresh.js?");
+
+/***/ }),
+
+/***/ "./src/result.js":
+/*!***********************!*\
+  !*** ./src/result.js ***!
+  \***********************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nclass Result {\n  static record(user, score) {\n    return `\n    <div class=\"result\" data-id=${user}>\n      <span class=\"user\" data-id=${user}>${user}: </span>\n      <span class=\"score\" data-id=${user}>${score}</span>\n    </div>\n    `;\n  }\n}\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Result);\n\n\n//# sourceURL=webpack://leaderboard/./src/result.js?");
 
 /***/ })
 
