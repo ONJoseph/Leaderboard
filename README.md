@@ -7,17 +7,38 @@
 
 ![screenshot](./leaderboard.png)
 
+![screenshot](Leaderboard_screenshot.png)
+
+
 ## Description
 
 In this activity I will set up a JavaScript project for the Leaderboard list app, using webpack and ES6 features, notably modules. I should develop a first working version of the app following a wire frame, but without styling - just focus on functionality. In following activities, I will consume the Leaderboard API using JavaScript async and await and add some styling.
 
 ## Instructions:
 
-- Use [Gitflow](https://github.com/microverseinc/curriculum-transversal-skills/blob/main/git-github/articles/gitflow.md)
-- Create an npm project with [webpack](https://webpack.js.org/guides/output-management/#setting-up-htmlwebpackplugin)
-- Write plain HTML markup with minimum styling (just to make the layout), because you will implement styles in the following steps
-- Don't make API calls (you'll do it in a following lesson).
-- Use ES6 modules, with import and export.
+### Phase 1, setup project
+
+- [x] Use [Gitflow](https://github.com/microverseinc/curriculum-transversal-skills/blob/main/git-github/articles/gitflow.md)
+- [x] Create an npm project with [webpack](https://webpack.js.org/guides/output-management/#setting-up-htmlwebpackplugin)
+- [x] Write plain HTML markup with minimum styling (just to make the layout), because you will implement styles in the following steps
+- [x] Don't make API calls (you'll do it in a following lesson).
+- [x] Use ES6 modules, with import and export.
+
+### Phase 2, hit the API
+
+- [x] Read the Leader board API documentation to learn how to use this API.
+- [x] Create a new game with the name of your choice by using the API.
+- [x] Implement the "Refresh" button (receiving data from the API and parsing the JSON).
+- [x] Implement the form "Submit" button (sending data to the API).
+- [x] Use `async` and `await` JavaScript features to consume the API.
+- [x] No styling is required.
+
+### Phase 3, final touches
+
+- At this point I should have a fully working app that uses only basic styles to make the layout work, according to this wire frame shown above.
+- Now you should improve the look and feel of the application, adding the styles of your choice.
+- Please keep the general layout of the wire frame, this is the only mandatory requirement.
+- You can use plain CSS or any CSS framework, it's up to you.
 
 ## Built With
 
@@ -27,8 +48,7 @@ In this activity I will set up a JavaScript project for the Leaderboard list app
 
 ## Live Demo
 
-- Not deployed yet.
-
+- [Live Demo](https://onjoseph.github.io/Leaderboard/dist/)
 ## Getting Started
 
 To get a local copy up and running follow these simple example steps.
