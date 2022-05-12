@@ -7,7 +7,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Joseph Ogbole | Leaderboard, Front-End Developer from Nigeria" />
   <meta name="keywords" content="Leaderboard, Front-End, Front-End Developer, HTML, CSS, Javascript, ONJoseph" />
-  <link rel="stylesheet" href="./styles.css">
   <title>Joseph's Leaderboard app</title>
 <script defer src="main.js"></script></head>
 
@@ -21,29 +20,16 @@
         <h2>Recent scores</h2>
         <button class="btn-refresh" type="button">Refresh</button>
       </div>
-      <div class="results">
-        <div class="result">
-          <span class="name">Joseph Ogbole: </span>
-          <span class="score">100</span>
-        </div>
-        <div class="result">
-          <span class="name">Elon Musk: </span>
-          <span class="score">125</span>
-        </div>
-        <div class="result">
-          <span class="name">Bill Gates: </span>
-          <span class="score">130</span>
-        </div>
-      </div>
+      <div class="results"></div>
     </section>
     <aside>
       <h2>Add your score</h2>
-      <form action="#">
+      <form id="data-submit">
         <label for="name"></label>
-        <input class="your-name" type="text" id="name" name="name" placeholder="Your name"><br><br>
+        <input class="your-name" type="text" id="name" name="name" placeholder="Your name">
         <label for="score"></label>
-        <input class="your-score" type="text" id="score" name="score" placeholder="Your score"><br><br>
-        <input class="btn-submit" type="submit" value="Submit">
+        <input class="your-score" type="text" id="score" name="score" placeholder="Your score">
+        <button class="btn-submit" type="submit" value="Submit" title="Submit">Submit</button>
       </form>
     </aside>
   </main>
